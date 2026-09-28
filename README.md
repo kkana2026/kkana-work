@@ -1,36 +1,38 @@
-# kkana 委託網站
+# kkana work — portfolio redesign
 
-Live2D 建模、Live2D 立繪拆圖與插畫作品集。
+保留原專案的淺藍＋白色，參考 Wix 的大標題、四分類導覽和首頁閱讀順序。
 
-## 網站內容
+## 預覽與使用
 
-- `index.html`：名稱、介紹、價格、服務內容、委託條款和聯絡方式。
-- `style.css`：淺藍白色配色與手機版排版。
-- `content.js`：作品圖片、MP4 影片與 YouTube 影片清單。
-- `app.js`：分類切換、幣別顯示、影片與作品放大功能。
-- `favicon.svg`：網站圖示。
-- `.nojekyll`：讓 GitHub Pages 直接提供靜態網站。
+直接開啟 index.html 即可預覽；也可將資料夾內檔案放到 GitHub Pages 儲存庫根目錄。
+此版本尚未推送到 GitHub 或發布。
 
-## 修改作品
+## 網頁結構
 
-在 `content.js` 的 `rig`、`model` 或 `art` 清單新增或替換項目：
+- 首頁：雙語介紹、委託流程、聯絡與付款、委託條款。
+- #rig：Live2D 建模。
+- #model：Live2D 繪圖與立繪拆圖。
+- #art：插畫。
+- 支援手機、鍵盤導覽、圖片放大、MYR / TWD / USD 獨立價格。
 
-```js
-{ type: 'image', title: '作品名稱', src: 'assets/example.jpg' }
-{ type: 'video', title: '模型展示', src: 'assets/example.mp4', poster: 'assets/cover.jpg' }
-{ type: 'youtube', title: '模型展示', id: 'YouTube影片ID' }
-```
+## 更新作品
 
-若使用本地檔案，把圖片或影片放進 `assets` 資料夾並一起上傳。現有圖片和 MP4 沿用作者舊 Wix 網站的公開素材連結；如果刪除舊站媒體，請同步替換這裡的來源。YouTube 作品使用原影片 ID。
+在 content.js 新增或修改作品。支援 image、video 和 youtube。
+圖片與影片沿用原有 Wix 公開素材；需要網路連線，若移除 Wix 媒體，請替換對應來源。
 
-## 修改價格
+## 更新價格與內容
 
-`index.html` 中每個 `data-prices="300,3600,114"` 的三個數字，依序為 MYR、TWD、USD。三種價格為獨立標價，不會按匯率自動換算。
+index.html 的 data-prices 三個值依序是 MYR、TWD、USD，不會按匯率自動換算。
+原專案的價格與委託條款內容保留，設計更新不代表更改委託政策。
+style.css 控制配色與排版，app.js 控制頁面切換與互動。
 
-## GitHub Pages
+## 權利
 
-將這個資料夾內的檔案放到儲存庫根目錄。Settings → Pages → Deploy from a branch → main / (root) → Save。之後修改檔案並提交，網站會重新發布。
+作品權利屬原作者及相關權利人。公開原始碼不代表授權重用插畫或模型。
 
-## 權利與聯絡
+## 中英文切換
 
-作品權利屬於原作者及相關權利人。本儲存庫公開不代表授權重用插畫或模型作品。委託聯絡：kanakiyuuran@gmail.com。
+右上角「中文 / EN」按鈕切換網站語言，並在此瀏覽器記住選擇。
+i18n.js 包含英文翻譯；增加中文文案時，請同步補上對應英文。
+切換語言保留目前作品分類及所選幣別。
+新版首頁包含三個作品分類預覽，桌面和手機各有對應排版。
